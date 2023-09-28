@@ -1,23 +1,11 @@
--- This file is part of the Circuitos Digitales II
--- by Carlos Hernan Tobar Arteaga
--- File name: project_01/NotGate_test.vhdl
-
--- Not gate:
--- f = not x
-
-
--- Library and packages 
 library	IEEE;
 use IEEE.std_logic_1164.all;
 
--- Entity (empty)
 entity NotGate_test is	
 end entity;
-
--- Architecture (test process)
+	
 architecture arch_test of NotGate_test is
 
-	-- Component declaration
 	component NotGate
 		port(
 			x	:	in 	std_logic;
@@ -25,23 +13,18 @@ architecture arch_test of NotGate_test is
 		);
 	end component;
 	
-	-- Signal declaration
-	signal x_test	: std_logic := '0';
-	signal f_test	: std_logic;
+	signal x_test,  f_test	: std_logic := '0';
 	
 	begin
 	
-	-- DUT instantiation
 	dut1	: NotGate 
 		port map (
 			x => x_test,
 			f => f_test
 		);
 
-	-- Stimulus generation
 	Stimulus	: process
-	begin
-	  
+	begin	  
 	  report "Start of the test of NotGate"	  
 		severity note;
 		
@@ -62,5 +45,4 @@ architecture arch_test of NotGate_test is
 		wait;
 		
 	end process;
-
 end architecture;
