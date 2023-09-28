@@ -31,16 +31,24 @@ begin
         y => y
     );
 
-    -- Stimulus process
     stimulus: process
     begin
-        -- Insert stimulus here
+    a0 <= "0000000000000000";
+    a1 <= "1111111111111111";
+    a2 <= "0101010101010101";
+    a3 <= "1010101010101010";
+    sel0 <= '0';
+    sel1 <= '0';
+    wait for 10 ns;
 
-        -- Wait for 100 ns to allow the DUT to respond
-
-        -- Insert assertions or checks here
-
-        -- End the testbench simulation
+    a0 <= "1111000011110000";
+    a1 <= "0000111100001111";
+    a2 <= "0101010101010101";
+    a3 <= "1010101010101010";
+    sel0 <= '0';
+    sel1 <= '1';
+    wait for 10 ns;       
+        
         wait;
     end process;
 
