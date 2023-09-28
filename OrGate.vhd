@@ -4,8 +4,6 @@ library IEEE;
 
 use IEEE.STD_LOGIC_1164.ALL;
 
---entidad
-
 entity OrGate is
 
 	Port (in1 : in STD_LOGIC;
@@ -13,8 +11,6 @@ entity OrGate is
 			salida : out STD_LOGIC);
 			
 end entity;
-
---arquitectura	
 
 architecture behavioral of OrGate is
 
