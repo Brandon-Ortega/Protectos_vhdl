@@ -6,7 +6,6 @@ end halfadder_tb;
 
 architecture testbench of halfadder_tb is
 
-  -- Declaración del componente para la unidad bajo prueba (UUT)
   component halfadder is
     port (
       a, b : in std_logic;
@@ -14,17 +13,14 @@ architecture testbench of halfadder_tb is
     );
   end component;
 
-  -- Entradas
   signal a : std_logic := '0';
   signal b : std_logic := '0';
 
-  -- Salidas
   signal sum : std_logic;
   signal carry_out : std_logic;
 
 begin
 
-  -- Instanciación de la unidad bajo prueba (UUT)
   uut: halfadder port map (
     a => a,
     b => b,
@@ -32,7 +28,6 @@ begin
     carry_out => carry_out
   );
 
-  -- Proceso de estímulo
   stim_proc: process
   begin        
 
@@ -40,8 +35,7 @@ begin
     b <= '0';
     
     wait for 10 ns;
-    
-    -- Verificar las salidas
+   
     assert sum = '0' and carry_out = '0'
       report "Error: Unexpected output values"
       severity error;
@@ -49,8 +43,7 @@ begin
     b <= '0';
     
     wait for 10 ns;
-    
-    -- Verificar las salidas
+
     assert sum = '1' and carry_out = '0'
       report "Error: Unexpected output values"
       severity error;		
@@ -59,8 +52,7 @@ begin
     b <= '1';
     
     wait for 10 ns;
-    
-    -- Verificar las salidas
+
     assert sum = '1' and carry_out = '0'
       report "Error: Unexpected output values"
       severity error;
@@ -68,8 +60,7 @@ begin
     b <= '0';
     
     wait for 10 ns;
-    
-    -- Verificar las salidas
+
     assert sum = '0' and carry_out = '0'
       report "Error: Unexpected output values"
       severity error;
